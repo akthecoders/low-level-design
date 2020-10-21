@@ -1,0 +1,6 @@
+Create a Chess game board
+1) Player can play the chess.
+2) Player can win.
+3) Undo is not allowed
+4) Player can switch the moves.
+5) Chess board is a standard one.
