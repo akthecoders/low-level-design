@@ -66,8 +66,11 @@
  * 
  * 
  * 
- * Database Design
- * 
+ * Database Design for Chess
+ * Tables:
+ *  Game
+ *  User
+ *  
  * 
  * 
  */
