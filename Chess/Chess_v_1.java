@@ -1,118 +1,114 @@
 package Chess;
 
 /**
- * 
  * API Design
- * 
+ * <p>
  * Base URL: my.chess.com
- * 
- * 
- * 
- * 
- * 
+ * <p>
+ * <p>
+ * <p>
+ * <p>
+ * <p>
  * GET: {baseURL}/chess/initiate
  * Responses:
  * 200:
- *  Return a json object for the status if chess is initiated with a game id.
- *  body: Contains json 
+ * Return a json object for the status if chess is initiated with a game id.
+ * body: Contains json
  * 404:
- *  Return if chess not initialized
- * 
- * 
- * 
- * 
- * 
+ * Return if chess not initialized
+ * <p>
+ * <p>
+ * <p>
+ * <p>
+ * <p>
  * GET: {baseURL}/chess/{gameId}/player/{playerId}/move?from={location}?to={location}
  * Path Params:
- *  playerId: playerId of the player who is doing the move.
- *      values: A valid playerId
- *      type: String
- *  gameId: gameId is the id of the game which is beign played.
- *      values: A valid gameId
- *      type: String
+ * playerId: playerId of the player who is doing the move.
+ * values: A valid playerId
+ * type: String
+ * gameId: gameId is the id of the game which is beign played.
+ * values: A valid gameId
+ * type: String
  * Query Params:
- *  from: location from where the player wants to move
- *      values: A string of the numeric and the alphabets as per the chess board.
- *      type: String
- *  to: locatino to where the player wants to move
- *      values: A string of the numeric and the alphabets as per the chess board.
- *      type: String
+ * from: location from where the player wants to move
+ * values: A string of the numeric and the alphabets as per the chess board.
+ * type: String
+ * to: locatino to where the player wants to move
+ * values: A string of the numeric and the alphabets as per the chess board.
+ * type: String
  * Response:
- *  200:
- *      Return a json object if the move was valid, along with an object containig values if it attacked the another player pieces.
- *      body: Contains json of valid move along with , piece if any attacked by this move.
- *  401:
- *      Return a json object if the move was not valid,
- *      body: Contains json of invalid move.
- *
- * 
- * 
- * 
- * 
+ * 200:
+ * Return a json object if the move was valid, along with an object containig values if it attacked the another player pieces.
+ * body: Contains json of valid move along with , piece if any attacked by this move.
+ * 401:
+ * Return a json object if the move was not valid,
+ * body: Contains json of invalid move.
+ * <p>
+ * <p>
+ * <p>
+ * <p>
+ * <p>
  * GET: {baseURL}/chess/{gameId}/player/{playerId}/winner
  * Path Params:
- *  gameId: gameId is the id of the game which is beign played.
- *      values: A valid gameId
- *      type: String
- *  playerId: playerId of the player who is doing the move.
- *      values: A valid playerId
- *      type: String
+ * gameId: gameId is the id of the game which is beign played.
+ * values: A valid gameId
+ * type: String
+ * playerId: playerId of the player who is doing the move.
+ * values: A valid playerId
+ * type: String
  * Response:
- *  200:
- *      Return a json object with status of game and if the player has won or defeated or no status
- *      body: Contains json
- *  500:
- *      Return a json object if request fails due to server error.
- * 
- * 
- * 
- * 
- * 
+ * 200:
+ * Return a json object with status of game and if the player has won or defeated or no status
+ * body: Contains json
+ * 500:
+ * Return a json object if request fails due to server error.
+ * <p>
+ * <p>
+ * <p>
+ * <p>
+ * <p>
  * Database Design for Chess
  * Tables:
- *  Game
- *  User
- *  GameUserWonMapping
- *  Moves
- * 
- * Game Table
- *      ColName             Data Type               Constraints
- *      id                  var_char(10)            PK
- *      status              ENUM(5)                 Not Null
- *      player1             var_char(10)            Foreign Key to User
- *      player2             var_char(10)            Foreign Key to User
- *      
- * 
- * User Table
- *      ColName             Data Type               Constratints
- *      id                  var_char(10)            PK
- *      first_name          var_char(20)            Not Null
- *      last_name           var_char(20)            Not NUll
- *      email               var_char(30)            Not Null CK
- * 
+ * Game
+ * User
  * GameUserWonMapping
- *      ColName             Data Type               Constraints
- *      id                  var_char(10)            PK
- *      gameID              var_char(10)            ForeignKey to Game Table
- *      userId              var_char(10)            ForeignKey to User
- * 
  * Moves
- *      ColName             Data Type               Constraints
- *      id                  var_char(10)            PK
- *      Piece               var_char(10)            Not Null
- *      LocationFrom        var_char(10)            Not NUll
- *      LocationTo          var_char(10)            Not Null
- *      LastMove            boolean                 Not Null
- *      PrevMove            var_char(10)            Key to Moves.ID
- *      NextMove            var_char(10)            Key to Moves.ID
- * 
- *      
- * 
+ * <p>
+ * Game Table
+ * ColName             Data Type               Constraints
+ * id                  var_char(10)            PK
+ * status              ENUM(5)                 Not Null
+ * player1             var_char(10)            Foreign Key to User
+ * player2             var_char(10)            Foreign Key to User
+ * <p>
+ * <p>
+ * User Table
+ * ColName             Data Type               Constratints
+ * id                  var_char(10)            PK
+ * first_name          var_char(20)            Not Null
+ * last_name           var_char(20)            Not NUll
+ * email               var_char(30)            Not Null CK
+ * <p>
+ * GameUserWonMapping
+ * ColName             Data Type               Constraints
+ * id                  var_char(10)            PK
+ * gameID              var_char(10)            ForeignKey to Game Table
+ * userId              var_char(10)            ForeignKey to User
+ * <p>
+ * Moves
+ * ColName             Data Type               Constraints
+ * id                  var_char(10)            PK
+ * Piece               var_char(10)            Not Null
+ * LocationFrom        var_char(10)            Not NUll
+ * LocationTo          var_char(10)            Not Null
+ * LastMove            boolean                 Not Null
+ * PrevMove            var_char(10)            Key to Moves.ID
+ * NextMove            var_char(10)            Key to Moves.ID
  */
 
 
 public class Chess_v_1 {
-    
+
     Player player1;
     Player player2;
     Player currentPlayer;
@@ -125,32 +121,29 @@ public class Chess_v_1 {
         return setup;
     }
 
-    public IResponse move(Location from , Location to) {
+    public IResponse move(Location from, Location to) {
         IResponse response = currentPlayer.move(from, to);
-        if(currentPlayer.won()) {
-            return new Success(Status.SUCCESS, "Player Won" + this);                
+        if (currentPlayer.won()) {
+            return new Success(Status.SUCCESS, "Player Won" + this);
         }
         updatePlayer();
         return response;
     }
 
     public Player winner() {
-        if(player1.won()) {
+        if (player1.won()) {
             return player1;
-        }
-        else if(player2.won()) {
+        } else if (player2.won()) {
             return player2;
-        }
-        else {
+        } else {
             return null;
         }
     }
 
     private void updatePlayer() {
-        if(currentPlayer == player1) {
+        if (currentPlayer == player1) {
             currentPlayer = player2;
-        }
-        else {
+        } else {
             currentPlayer = player1;
         }
     }
@@ -162,12 +155,11 @@ class Player {
     String last_name;
     Color color;
 
-    public IResponse move(Location from , Location to) {
-        if(from.isValidMove(to)) {
+    public IResponse move(Location from, Location to) {
+        if (from.isValidMove(to)) {
             from.move(to);
             return new Success(Status.SUCCESS, "Moved");
-        }
-        else {
+        } else {
             return new Fail(Status.FAIL, "Invalid Move");
         }
     }
@@ -176,7 +168,7 @@ class Player {
         // Logic to find if player has won.
         return true;
     }
-    
+
 }
 
 abstract class Color {
@@ -216,7 +208,7 @@ interface MovingStrategy {
     void move(Piece piece);
 }
 
-class PawnMovingStrategy implements MovingStrategy{
+class PawnMovingStrategy implements MovingStrategy {
     @Override
     public void move(Piece piece) {
         // TODO Auto-generated method stub
@@ -230,6 +222,7 @@ interface IResponse {
 class Fail implements IResponse {
     Status status;
     String message;
+
     public Fail(Status status, String message) {
         this.status = status;
         this.message = message;
@@ -239,6 +232,7 @@ class Fail implements IResponse {
 class Success implements IResponse {
     Status status;
     String message;
+
     public Success(Status status, String message) {
         this.status = status;
         this.message = message;
@@ -262,6 +256,10 @@ class Setup {
     Player player1;
     Player player2;
     Player currentPlayer = player1;
-    public void findGame() {}
-    public void findPlayer() {}
+
+    public void findGame() {
+    }
+
+    public void findPlayer() {
+    }
 }
