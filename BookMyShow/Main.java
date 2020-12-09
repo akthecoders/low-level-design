@@ -8,6 +8,7 @@ public class Main {
     List<Cinema> cinema;
 
     public List<Movie> getMoviesList(Date date, String city);
+
     public List<Cinema> getCinemas(String city)
 }
 
@@ -17,6 +18,7 @@ public class Cinema {
     List<Audi> audiList;
 
     Map<Date, Movie> getMovies(List<Date> dateList);
+
     Map<Date, Show> getShows(List<Date> dateList);
 }
 
@@ -93,11 +95,13 @@ public class SystemMember {
 
 public class Member extends SystemMember {
     public Booking makeBooking(Booking booking);
+
     public List<Booking> getBooking();
 }
 
 public class Admin extends SystemMember {
     public boolean addMovie(Movie movie);
+
     public boolean addShow(Show show);
 }
 
@@ -117,7 +121,7 @@ public class BookingDetail {
     //Other bojs
 }
 
-class  Payment {
+class Payment {
     double amount;
     Date paymentDate;
     int transactionId;
