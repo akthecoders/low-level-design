@@ -93,31 +93,36 @@ class Receptionist extends Person {
     Search searchObj;
     Booking bookingObj;
 
-    public void checkInGuest(Guest guest, RoomBooking roombooking){}
+    public void checkInGuest(Guest guest, RoomBooking roombooking) {
+    }
 
-    public void checkOutGuest(Guest guest, RoomBooking roombooking){}
+    public void checkOutGuest(Guest guest, RoomBooking roombooking) {
+    }
 }
 
 class Admin extends Person {
-    public void addRoom(Rooms roomDetails){}
+    public void addRoom(Rooms roomDetails) {
+    }
 
-    public void removeRoom(String roomId){}
+    public void removeRoom(String roomId) {
+    }
 
-    public void editRoom(Rooms roomDetails){}
+    public void editRoom(Rooms roomDetails) {
+    }
 }
 
 class Search {
-    public List<Rooms> searchRoom(RoomStyle roomStyle, Date startDate, int duration){
+    public List<Rooms> searchRoom(RoomStyle roomStyle, Date startDate, int duration) {
         return null;
     }
 }
 
 class Booking {
-    public RoomBooking createBooking(Guest guestInfo){
+    public RoomBooking createBooking(Guest guestInfo) {
         return null;
     }
 
-    public RoomBooking cancelBooking(int bookingId){
+    public RoomBooking cancelBooking(int bookingId) {
         return null;
     }
 }
