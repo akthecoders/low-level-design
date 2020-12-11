@@ -76,11 +76,12 @@ class Member extends SystemUser {
     BookIssueService bookIssueService;
 }
 
-class Librarian extends  SystemUser {
+class Librarian extends SystemUser {
     Search searchObj;
     BookIssueService bookIssueService;
 
     public void addBooksItem(BookItem bookItem);
+
     public BookItem deleteBookItem(int barCode);
 }
 
@@ -92,8 +93,11 @@ class Account {
 
 class Search {
     public List<BookItem> getBookByTitle(String title);
+
     public List<BookItem> getBookByAuthor(String author);
+
     public List<BookItem> getBookByType(String type);
+
     public List<BookItem> getBookByPublicationDate(Date publicationDate);
 }
 
@@ -101,10 +105,15 @@ class BookIssueService {
     FineService fineService;
 
     public BookReservationDetails getReservationDetail(BookItem book);
+
     public void updateReservation(BookReservationDetails bookReservationDetails);
+
     public BookReservationDetails reserveBook(BookItem bookItem, SystemUser user);
+
     public BookIssueDetail issueBook(BookItem book, SystemUser user);
+
     public BookIssueDetail renewBook(BookItem book, SystemUser user);
+
     public void returnBook(BookItem book, SystemUser user);
 }
 
@@ -117,6 +126,7 @@ class BookLending {
 class BookReservationDetails {
     ReservationDetails reservationDetails;
 }
+
 class BookIssueDetails extends BookLending {
     Date dueDate;
 }
