@@ -1,6 +1,7 @@
 # Library Management System
 
 Design a library management system which have the following functionalities,
+
 1) User can borrow a book
 2) User can return a book
 3) One book can have multiple copies
@@ -10,8 +11,8 @@ Design a library management system which have the following functionalities,
 7) Search book in library.
 8) Notifications will be sent when a book is borrowed by system.
 
-
 Main Actors
+
 1) User
 2) Librarian
 3) Server
