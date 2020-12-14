@@ -1,13 +1,17 @@
 # Design True caller / WhosCall / Showcaller
+
 Come up with application that can perform
 
 ## Caller identification
+
 1. Call blocking
 2. Spam Detection
 3. Store users contacts
 
 ## Search for users contacts by name and number
+
 ### Use cases
+
 1. Users should be able to register
 2. Users should be able to add contacts
 3. Users should be able to import contacts
@@ -24,6 +28,7 @@ Come up with application that can perform
 14. Users should be able to search from global directory
 
 ### Actors
+
 1. Users
     1. Register
     2. Add/Import contacts
@@ -34,7 +39,7 @@ Come up with application that can perform
     7. Search for contacts by name and number.
     8. Add business post registration , addition of contacts register.
     9. Search from global directory.
-    
+
 2. System
     1. Notification to User.
     
