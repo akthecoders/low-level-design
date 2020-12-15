@@ -137,3 +137,7 @@ class FineService {
     SystemUser user;
     Double fineValue;
 }
+
+class ReservationDetails {
+    
+}
