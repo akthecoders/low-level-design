@@ -4,7 +4,7 @@ import java.util.*;
 
 class Library {
     String name;
-    List<BookItems> bookItems;
+    List<BookItem> bookItems;
     Address location;
 }
 
@@ -139,5 +139,5 @@ class FineService {
 }
 
 class ReservationDetails {
-    
+
 }
