@@ -18,7 +18,7 @@ class Address {
 
 class Book {
     String bookName;
-    List<Author>;
+    List<Author> authorList;
     String ISBN;
     BookType type;
 }
