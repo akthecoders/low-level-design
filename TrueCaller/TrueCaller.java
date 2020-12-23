@@ -45,17 +45,11 @@ class Business {
 }
 
 enum BusinessSize {
-    SMALL,
-    MEDIUM,
-    LARGE,
-    ENTERPRISE
+    SMALL, MEDIUM, LARGE, ENTERPRISE
 }
 
 enum BusinessType {
-    EXPORT,
-    IMPORTS,
-    FINTECH,
-    CLOTHING,
+    EXPORT, IMPORTS, FINTECH, CLOTHING,
 }
 
 class SearchService {
@@ -177,8 +171,7 @@ class Message {
 }
 
 enum MessageType {
-    EMAIL,
-    SMS,
+    EMAIL, SMS,
 }
 
 interface Template {
@@ -196,4 +189,3 @@ class BlueTemplate implements Template {
 public class TrueCaller {
 
 }
-
