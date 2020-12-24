@@ -1,0 +1,1 @@
+1) User is able to see do search.
