@@ -3,3 +3,5 @@
 3) User should have functionality to select some categories.
 
 # Happy BirthDay to Me
+
+4) Search results should also have categories divided into it.
