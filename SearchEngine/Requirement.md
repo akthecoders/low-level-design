@@ -5,3 +5,4 @@
 # Happy BirthDay to Me
 
 4) Search results should also have categories divided into it.
+5) Multiple locaiton support.
