@@ -6,3 +6,4 @@
 
 4) Search results should also have categories divided into it.
 5) Multiple locaiton support.
+6) Logged in user should have personalized results.
